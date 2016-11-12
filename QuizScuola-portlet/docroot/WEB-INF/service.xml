@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="it.quizscuola.portlet">
+	<author>Salvatore</author>
+	<namespace>Quiz</namespace>
+
+	<entity name="Classe" local-service="true" uuid="true"  remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="id" type="long" primary="true" />
+        <column name="descClasse" type="String" />	
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />	
+		<order by="asc">
+			<order-column name="descClasse" />
+		</order>
+	</entity>
+	<entity name="Materia" local-service="true" uuid="true"  remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="idMateria" type="long" primary="true" />
+        <column name="descMateria" type="String" />	
+         <column name="idClasse" type="long" />	
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<order by="asc">
+			<order-column name="descMateria" />
+		</order>
+	</entity>
+	<entity name="Argomento" local-service="true" uuid="true"  remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="idArgomento" type="long" primary="true" />
+        <column name="descArgomento" type="String" />	
+         <column name="idMateria" type="long" />	
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<order by="asc">
+			<order-column name="descArgomento" />
+		</order>
+	</entity>
+	<entity name="Domanda" local-service="true" uuid="true"  remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="idDomanda" type="long" primary="true" />
+        <column name="descDomanda" type="String" />	
+         <column name="idArgomento" type="long" />	
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<order by="asc">
+			<order-column name="descDomanda" />
+		</order>
+	</entity>
+	<entity name="Risposta" local-service="true" uuid="true"  remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="idRisposta" type="long" primary="true" />
+        <column name="descRisposta" type="String" />
+        <column name="posizione" type="int" />	
+        <column name="esatta" type="boolean" />
+        <column name="idDomanda" type="long" />	
+        
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<order by="asc">
+			<order-column name="posizione" />
+		</order>
+	</entity>
+	<entity name="RispostaUtente" local-service="true" uuid="true"  remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="idRispostaUtente" type="long" primary="true" />
+        <column name="idRisposta" type="long" />
+        <column name="idUtente" type="long" />	
+        <column name="dataRisposta" type="Date" />
+        <column name="idDomanda" type="long" />	
+       
+		<order by="asc">
+			<order-column name="idDomanda" />
+		</order>
+	</entity>
+</service-builder>

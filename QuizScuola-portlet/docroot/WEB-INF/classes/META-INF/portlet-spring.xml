@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="it.quizscuola.portlet.service.ArgomentoLocalService" class="it.quizscuola.portlet.service.impl.ArgomentoLocalServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.ArgomentoService" class="it.quizscuola.portlet.service.impl.ArgomentoServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.persistence.ArgomentoPersistence" class="it.quizscuola.portlet.service.persistence.ArgomentoPersistenceImpl" parent="basePersistence" />
+	<bean id="it.quizscuola.portlet.service.ClasseLocalService" class="it.quizscuola.portlet.service.impl.ClasseLocalServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.ClasseService" class="it.quizscuola.portlet.service.impl.ClasseServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.persistence.ClassePersistence" class="it.quizscuola.portlet.service.persistence.ClassePersistenceImpl" parent="basePersistence" />
+	<bean id="it.quizscuola.portlet.service.DomandaLocalService" class="it.quizscuola.portlet.service.impl.DomandaLocalServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.DomandaService" class="it.quizscuola.portlet.service.impl.DomandaServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.persistence.DomandaPersistence" class="it.quizscuola.portlet.service.persistence.DomandaPersistenceImpl" parent="basePersistence" />
+	<bean id="it.quizscuola.portlet.service.MateriaLocalService" class="it.quizscuola.portlet.service.impl.MateriaLocalServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.MateriaService" class="it.quizscuola.portlet.service.impl.MateriaServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.persistence.MateriaPersistence" class="it.quizscuola.portlet.service.persistence.MateriaPersistenceImpl" parent="basePersistence" />
+	<bean id="it.quizscuola.portlet.service.RispostaLocalService" class="it.quizscuola.portlet.service.impl.RispostaLocalServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.RispostaService" class="it.quizscuola.portlet.service.impl.RispostaServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.persistence.RispostaPersistence" class="it.quizscuola.portlet.service.persistence.RispostaPersistenceImpl" parent="basePersistence" />
+	<bean id="it.quizscuola.portlet.service.RispostaUtenteLocalService" class="it.quizscuola.portlet.service.impl.RispostaUtenteLocalServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.RispostaUtenteService" class="it.quizscuola.portlet.service.impl.RispostaUtenteServiceImpl" />
+	<bean id="it.quizscuola.portlet.service.persistence.RispostaUtentePersistence" class="it.quizscuola.portlet.service.persistence.RispostaUtentePersistenceImpl" parent="basePersistence" />
+</beans>
