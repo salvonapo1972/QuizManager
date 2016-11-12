@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_quiz_ArgomentoService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.portlet.quizscuola.it" xmlns:cmp-ns="http://model.portlet.quizscuola.it" qname="ns:ArrayOf_tns3_ArgomentoSoap" type="java:it.quizscuola.portlet.model.ArgomentoSoap[]" innerType="cmp-ns:ArgomentoSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<arrayMapping xmlns:ns="urn:http.service.portlet.quizscuola.it" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<arrayMapping xmlns:ns="urn:http.service.portlet.quizscuola.it" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_long" type="java:long[]" innerType="cmp-ns:long" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<arrayMapping xmlns:ns="urn:http.service.portlet.quizscuola.it" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_string" type="java:java.lang.String[]" innerType="cmp-ns:string" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.portal.liferay.com" qname="ns:PortletPreferencesIds" type="java:com.liferay.portal.model.PortletPreferencesIds" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://model.portlet.quizscuola.it" qname="ns:ArgomentoSoap" type="java:it.quizscuola.portlet.model.ArgomentoSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://service.portal.liferay.com" qname="ns:ServiceContext" type="java:com.liferay.portal.service.ServiceContext" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://theme.portal.liferay.com" qname="ns:PortletDisplay" type="java:com.liferay.portal.theme.PortletDisplay" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://theme.portal.liferay.com" qname="ns:ThemeDisplay" type="java:com.liferay.portal.theme.ThemeDisplay" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://util.kernel.portal.liferay.com" qname="ns:OrderByComparator" type="java:com.liferay.portal.kernel.util.OrderByComparator" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://util.kernel.portal.liferay.com" qname="ns:StringBundler" type="java:com.liferay.portal.kernel.util.StringBundler" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://xml.apache.org/xml-soap" qname="ns:mapItem" type="java:org.apache.xml.xml_soap.MapItem" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" xmlns:rtns="http://model.portlet.quizscuola.it" name="addArgomento" qname="operNS:addArgomento" returnQName="addArgomentoReturn" returnType="rtns:ArgomentoSoap" soapAction="">
+			<parameter xmlns:tns="http://service.portal.liferay.com" qname="ctx" type="tns:ServiceContext"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="descArgomento" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="idMateria" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" name="deleteDomandasByArgomento" qname="operNS:deleteDomandasByArgomento" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="idUtente" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="idArgomento" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" name="deleteDomandasERisposteByArgomento" qname="operNS:deleteDomandasERisposteByArgomento" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="idArgomento" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getArgomentiByMateriaCount" qname="operNS:getArgomentiByMateriaCount" returnQName="getArgomentiByMateriaCountReturn" returnType="rtns:int" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="idMateria" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" xmlns:rtns="urn:http.service.portlet.quizscuola.it" xmlns:tns2="http://model.portlet.quizscuola.it" name="getArgomentiByMateria" qname="operNS:getArgomentiByMateria" returnQName="getArgomentiByMateriaReturn" returnType="rtns:ArrayOf_tns3_ArgomentoSoap" returnItemType="tns2:ArgomentoSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="idMateria" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://util.kernel.portal.liferay.com" qname="orderByComparator" type="tns:OrderByComparator"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getArgomentiCount" qname="operNS:getArgomentiCount" returnQName="getArgomentiCountReturn" returnType="rtns:int" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" xmlns:rtns="urn:http.service.portlet.quizscuola.it" xmlns:tns2="http://model.portlet.quizscuola.it" name="getArgomentos" qname="operNS:getArgomentos" returnQName="getArgomentosReturn" returnType="rtns:ArrayOf_tns3_ArgomentoSoap" returnItemType="tns2:ArgomentoSoap" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" xmlns:rtns="urn:http.service.portlet.quizscuola.it" xmlns:tns2="http://model.portlet.quizscuola.it" name="getArgumentos" qname="operNS:getArgumentos" returnQName="getArgumentosReturn" returnType="rtns:ArrayOf_tns3_ArgomentoSoap" returnItemType="tns2:ArgomentoSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://util.kernel.portal.liferay.com" qname="orderByComparator" type="tns:OrderByComparator"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getJSONListaArgomenti" qname="operNS:getJSONListaArgomenti" returnQName="getJSONListaArgomentiReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="idMateria" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" xmlns:rtns="http://model.portlet.quizscuola.it" name="removeArgomento" qname="operNS:removeArgomento" returnQName="removeArgomentoReturn" returnType="rtns:ArgomentoSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="id" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.portlet.quizscuola.it" xmlns:rtns="http://model.portlet.quizscuola.it" name="updateArgomento" qname="operNS:updateArgomento" returnQName="updateArgomentoReturn" returnType="rtns:ArgomentoSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="idArgomento" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="descArgomento" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addArgomento deleteDomandasByArgomento deleteDomandasERisposteByArgomento getArgomentiByMateria getArgomentiByMateriaCount getArgomentiCount getArgomentos getArgumentos getJSONListaArgomenti removeArgomento updateArgomento" />
+		<parameter name="className" value="it.quizscuola.portlet.service.http.ArgomentoServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.portal.liferay.com,http://model.portlet.quizscuola.it,http://service.portal.liferay.com,http://theme.portal.liferay.com,http://util.kernel.portal.liferay.com,http://xml.apache.org/xml-soap,urn:http.service.portlet.quizscuola.it" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ArgomentoServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ArgomentoServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_quiz_ArgomentoService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.portlet.quizscuola.it" />
+	</service>
+</deployment>
