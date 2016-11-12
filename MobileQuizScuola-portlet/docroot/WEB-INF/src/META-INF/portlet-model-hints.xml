@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="it.quizscuola.portlet.model.Argomento">
+		<field name="uuid" type="String" />
+		<field name="idArgomento" type="long" />
+		<field name="descArgomento" type="String" />
+		<field name="idMateria" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.quizscuola.portlet.model.Classe">
+		<field name="uuid" type="String" />
+		<field name="id" type="long" />
+		<field name="descClasse" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.quizscuola.portlet.model.Domanda">
+		<field name="uuid" type="String" />
+		<field name="idDomanda" type="long" />
+		<field name="descDomanda" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="idArgomento" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="posizione" type="int" />
+	</model>
+	<model name="it.quizscuola.portlet.model.Materia">
+		<field name="uuid" type="String" />
+		<field name="idMateria" type="long" />
+		<field name="descMateria" type="String" />
+		<field name="idClasse" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.quizscuola.portlet.model.Risposta">
+		<field name="uuid" type="String" />
+		<field name="idRisposta" type="long" />
+		<field name="descRisposta" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="esatta" type="boolean" />
+		<field name="idDomanda" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.quizscuola.portlet.model.RispostaUtente">
+		<field name="uuid" type="String" />
+		<field name="idRispostaUtente" type="long" />
+		<field name="idRisposta" type="long" />
+		<field name="idUtente" type="long" />
+		<field name="dataRisposta" type="Date" />
+		<field name="idDomanda" type="long" />
+	</model>
+</model-hints>
