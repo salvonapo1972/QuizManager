@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="it.quizscuola.portlet.model.Argomento" />
+	<import class="it.quizscuola.portlet.model.Classe" />
+	<import class="it.quizscuola.portlet.model.Domanda" />
+	<import class="it.quizscuola.portlet.model.Materia" />
+	<import class="it.quizscuola.portlet.model.Risposta" />
+	<import class="it.quizscuola.portlet.model.RispostaUtente" />
+	<class name="it.quizscuola.portlet.model.impl.ArgomentoImpl" table="quiz_Argomento">
+		<cache usage="read-write" />
+		<id name="idArgomento" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="descArgomento" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="idMateria" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.quizscuola.portlet.model.impl.ClasseImpl" table="quiz_Classe">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="descClasse" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.quizscuola.portlet.model.impl.DomandaImpl" table="quiz_Domanda">
+		<cache usage="read-write" />
+		<id name="idDomanda" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="descDomanda" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="idArgomento" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="posizione" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="it.quizscuola.portlet.model.impl.MateriaImpl" table="quiz_Materia">
+		<cache usage="read-write" />
+		<id name="idMateria" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="descMateria" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="idClasse" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.quizscuola.portlet.model.impl.RispostaImpl" table="quiz_Risposta">
+		<cache usage="read-write" />
+		<id name="idRisposta" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="descRisposta" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esatta" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="idDomanda" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.quizscuola.portlet.model.impl.RispostaUtenteImpl" table="quiz_RispostaUtente">
+		<cache usage="read-write" />
+		<id name="idRispostaUtente" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="idRisposta" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="idUtente" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="dataRisposta" type="org.hibernate.type.TimestampType" />
+		<property name="idDomanda" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>
